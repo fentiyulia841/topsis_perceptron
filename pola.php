@@ -16,6 +16,9 @@
             </div>
         </form>
     </div>
+
+
+
     <table class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
@@ -27,6 +30,8 @@
                 <th>Aksi</th>
             </tr>
         </thead>
+
+
         <?php
         $q = esc_field($_GET['q']);
         $rows = $db->get_results("SELECT * FROM tb_pola p INNER JOIN tb_jenis j ON j.id_jenis=p.id_jenis INNER JOIN tb_sektor s ON s.id_sektor=p.id_sektor WHERE nama_jenis LIKE '%$q%' OR nama_sektor LIKE '%$q%' ORDER BY id_pola");
@@ -45,11 +50,11 @@
                     <span class="glyphicon glyphicon-signal"></span>TOPSIS</a>
                     
                     <a class="btn btn-info btn-circle btn-sm" 
-                        href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
+                        href="?m=pola_ubah&ID=<?= $row->id_pola ?>">
                         <i class="fas fa-info-circle"></i>
                     </a>
                     <a class="btn btn-danger btn-circle btn-sm" 
-                        href="aksi.php?act=kriteria_hapus&ID=<?= $row->id_kriteria ?>" 
+                        href="aksi.php?act=pola_hapus&ID=<?= $row->id_pola ?>" 
                         onclick="return confirm('Hapus data?')">
                         <i class="fas fa-trash"></i>
                     </a>
@@ -57,4 +62,5 @@
             </tr>
         <?php endforeach; ?>
     </table>
+    
 </div>

@@ -11,6 +11,8 @@ Sektor: <?= $SEKTOR[$pola->id_sektor] ?><br />
 Tanggal Kejadian: <?= $pola->tanggal_kejadian ?><br />
 Tanggal Input: <?= $pola->tanggal_input ?><br />
 <hr />
+
+
 <?php
 if ($_POST) {
     $nilai = $_POST['nilai'];
@@ -28,6 +30,9 @@ $topsis = new TOPSIS($data_nilai, $ATRIBUT, $BOBOT);
 $rank = get_rank($topsis->preferensi);
 // echo '<pre>' . print_r($topsis, 1) . '</pre>';
 ?>
+
+
+<!-- data nilai  -->
 <form method="post">
     <div class="panel panel-primary">
         <div class="panel-heading">
@@ -49,6 +54,7 @@ $rank = get_rank($topsis->preferensi);
                         <?php foreach ($val as $k => $v) : ?>
                             <td>
                                 <select class="form-control" name="nilai[<?= $key ?>][<?= $k ?>]">
+                                <!-- menampilkan kriteria -->
                                     <?= get_crips_option($k, $v) ?>
                                 </select>
                             </td>
@@ -57,12 +63,17 @@ $rank = get_rank($topsis->preferensi);
                 <?php endforeach ?>
             </table>
         </div>
+
+
         <div class="panel-footer">
             <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>
             <a class="btn btn-danger" href="?m=pola"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
         </div>
     </div>
 </form>
+<!-- data nilai end -->
+
+
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Hasil Analisa</h3>
@@ -88,6 +99,10 @@ $rank = get_rank($topsis->preferensi);
         </table>
     </div>
 </div>
+
+
+
+
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Nilai Hasil Analisa</h3>
@@ -113,6 +128,8 @@ $rank = get_rank($topsis->preferensi);
         </table>
     </div>
 </div>
+
+
 <div class="panel panel-primary">
     <div class="panel-heading">
         <h3 class="panel-title">Normalisasi</h3>

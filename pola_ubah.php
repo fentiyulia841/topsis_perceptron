@@ -14,7 +14,7 @@ $row = $db->get_row("SELECT * FROM tb_jenis WHERE id_jenis='$_GET[ID]'");
             </div>
             <div class="form-group">
                 <button class="btn btn-primary"><span class="glyphicon glyphicon-save"></span> Simpan</button>
-                <a class="btn btn-danger" href="?m=jenis"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
+                <a class="btn btn-danger" href="?m=pola"><span class="glyphicon glyphicon-arrow-left"></span> Kembali</a>
             </div>
         </form>
     </div>
