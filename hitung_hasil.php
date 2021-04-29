@@ -25,7 +25,7 @@ if ($rows_pola) : // jika ditemukan jenis dan sektor yang sesuai
                 $id_pola = $row->id_pola;
                 break;
             }
-        }
+        } 
         // if ($id_alternatif)
         //     break;
     }
@@ -34,7 +34,7 @@ if ($rows_pola) : // jika ditemukan jenis dan sektor yang sesuai
     if ($id_alternatif)
         include 'hitung_hasil_ketemu.php';
     else
-        include 'hitung_hasil_ag.php';
+        include 'hitung_hasil_perceptron.php';
 else :
     print_msg('Tidak ditemukan hasil sesuai inputan jenis dan sektor bencana!');
 endif;

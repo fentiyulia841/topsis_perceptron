@@ -10,9 +10,7 @@ if ($_POST) {
     $id_jenis = $_POST['id_jenis'];
     $id_sektor = $_POST['id_sektor'];
     $nilai = $_POST['nilai'];
-    $lat = $_POST['lat'];
-    $lng = $_POST['lng'];
-    if ($lokasi == '' || $tanggal == '' || $id_jenis == '' || $id_sektor == '' || $lat == '' || $lng == '') {
+    if ($lokasi == '' || $tanggal == '' || $id_jenis == '' || $id_sektor == '') {
         print_msg('Field bertanda * tidak boleh kosong!');
         $success = false;
     }

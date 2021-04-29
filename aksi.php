@@ -187,10 +187,9 @@ elseif ($mod == 'crips_tambah') {
     $id_jenis = $post['id_jenis'];
     $id_sektor = $post['id_sektor'];
     $nilai = $post['nilai'];
-    $lat = $post['lat'];
-    $lng = $post['lng'];
+
     $id_alternatif = $post['id_alternatif'];
-    $db->query("INSERT INTO tb_bencana (lokasi, tanggal_kejadian, tanggal_input, id_jenis, id_sektor, lat, lng, id_alternatif) VALUES ('$lokasi', '$tanggal', NOW(), '$id_jenis', '$id_sektor', '$lat', '$lng', '$id_alternatif')");
+    $db->query("INSERT INTO tb_bencana (lokasi, tanggal_kejadian, tanggal_input, id_jenis, id_sektor, id_alternatif) VALUES ('$lokasi', '$tanggal', NOW(), '$id_jenis', '$id_sektor','$id_alternatif')");
     $id_bencana = $db->insert_id;
     foreach ($nilai as $key => $val) {
         $db->query("INSERT INTO tb_bencana_detail (id_bencana, id_kriteria, id_crips) VALUES ('$id_bencana', '$key', '$val')");

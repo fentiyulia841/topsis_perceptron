@@ -1,5 +1,5 @@
 <?php
-class AG
+class Perceptron
 {
     var $time_start; //menyimpan waktu mulai proses algotitma
     var $time_end; //menyimpan waktu selesai proses algoritma

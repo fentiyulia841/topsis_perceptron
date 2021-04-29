@@ -9,7 +9,7 @@
             <div class="form-group">
                 <label>Kode <span class="text-danger">*</span></label>
                 <input class="form-control" type="text" name="kode_kriteria" value="<?= set_value('kode_kriteria', kode_oto('kode_kriteria', 'tb_kriteria', 'K', 1)) ?>" />
-            </div>
+            </div> 
 
             <div class="form-group">
                 <label>Nama Kriteria <span class="text-danger">*</span></label>

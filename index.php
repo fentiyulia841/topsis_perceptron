@@ -116,24 +116,24 @@ include 'functions.php';
             </li>
            
             <!-- Nav Item - Dashboard -->
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="?m=hitung">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Surveyor</span></a>
-            </li> -->
+            </li>
 
             <!-- Divider -->
-            <!-- <hr class="sidebar-divider"> -->
+            <hr class="sidebar-divider">
 
             
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <!-- <li class="nav-item">
+            <li class="nav-item">
                 <a class="nav-link" href="?m=bencana">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Bencana</span>
                 </a>
-            </li> -->
+            </li>
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">

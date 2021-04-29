@@ -5,7 +5,7 @@ session_start();
 include 'config.php';
 include 'includes/db.php';
 $db = new DB($config['server'], $config['username'], $config['password'], $config['database_name']);
-include 'includes/ag_class.php';
+include 'includes/perceptron_class.php';
 include 'includes/topsis_class.php';
 
 $mod = $_GET['m'];
@@ -147,6 +147,7 @@ function get_sektor_option($selected)
     }
     return $a;
 }
+
 function get_crips_option($id_kriteria, $selected = 0)
 {
     global $CRIPS;
