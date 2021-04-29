@@ -106,6 +106,8 @@ function get_jenis_option($selected)
     }
     return $a;
 }
+
+// mengambil nama kriteria di tb_kriteria
 function get_kriteria_option($selected)
 {
     global $KRITERIA;
@@ -118,6 +120,21 @@ function get_kriteria_option($selected)
     }
     return $a;
 }
+
+// mengambil nama kriteria di tb_kriteria
+function get_idkriteria_option($selected)
+{
+    global $KRITERIA;
+    $a = '';
+    foreach ($KRITERIA as $key => $val) {
+        if ($key == $selected)
+            $a .= "<option value='$key' selected>$val->id_kriteria</option>";
+        else
+            $a .= "<option value='$key'>$val->id_kriteria</option>";
+    }
+    return $a;
+}
+
 function get_sektor_option($selected)
 {
     global $SEKTOR;

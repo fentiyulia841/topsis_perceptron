@@ -148,27 +148,35 @@ elseif ($mod == 'pola_tambah') {
 
 /** crips */
 elseif ($mod == 'crips_tambah') {
-    $kode_kriteria = $_POST['kode_kriteria'];
+    $id_kriteria = $_POST['id_kriteria'];
+    $nama_kriteria = $_POST['nama_kriteria'];
     $nama_crips = $_POST['nama_crips'];
     $nilai = $_POST['nilai'];
 
-    if ($kode_kriteria == '' || $nama_crips == '' || $nilai == '')
+    if ($id_kriteria == '' || $nama_kriteria == '' || $nama_crips == '' || $nilai == '')
         print_msg("Field bertanda * tidak boleh kosong!");
     else {
-        $db->query("INSERT INTO tb_crips (kode_kriteria, nama_crips, nilai) VALUES ('$kode_kriteria', '$nama_crips', '$nilai')");
-        redirect_js("index.php?m=crips&kode_kriteria");
+        $db->query("INSERT INTO tb_crips (id_kriteria, nama_kriteria, nama_crips, nilai) VALUES ('$id_kriteria','$nama_kriteria', '$nama_crips', '$nilai')");
+        redirect_js("index.php?m=crips&nama_kriteria");
     }
+
+
+
 } else if ($mod == 'crips_ubah') {
+    $id_kriteria = $_POST['id_kriteria'];
     $kode_kriteria = $_POST['kode_kriteria'];
     $nama_crips = $_POST['nama_crips'];
     $nilai = $_POST['nilai'];
 
-    if ($kode_kriteria == '' || $nama_crips == '' || $nilai == '')
+    if ($id_kriteria == '' || $nama_kriteria == '' || $nama_crips == '' || $nilai == '')
         print_msg("Field bertanda * tidak boleh kosong!");
     else {
-        $db->query("UPDATE tb_crips SET kode_kriteria='$kode_kriteria', nama_crips='$nama_crips', nilai='$nilai' WHERE id_crips='$_GET[ID]'");
-        redirect_js("index.php?m=crips&kode_kriteria");
+        $db->query("UPDATE tb_crips SET id_kriteria='$id_kriteria', nama_kriteria='$nama_kriteria', nama_crips='$nama_crips', nilai='$nilai' WHERE id_crips='$_GET[ID]'");
+        redirect_js("index.php?m=crips&nama_kriteria");
     }
+
+
+
 } else if ($act == 'crips_hapus') {
     $db->query("DELETE FROM tb_crips WHERE id_crips='$_GET[ID]'");
     header("location:index.php?m=crips&kode_kriteria");

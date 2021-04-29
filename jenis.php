@@ -35,11 +35,11 @@
                 <td><?= $row->nama_jenis ?></td>
                 <td>
                     <a class="btn btn-info btn-circle btn-sm" 
-                        href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
+                        href="?m=jenis_ubah&ID=<?= $row->id_jenis ?>">
                         <i class="fas fa-info-circle"></i>
                     </a>
                     <a class="btn btn-danger btn-circle btn-sm" 
-                        href="aksi.php?act=kriteria_hapus&ID=<?= $row->id_kriteria ?>" 
+                        href="aksi.php?act=jenis_hapus&ID=<?= $row->id_jenis ?>" 
                         onclick="return confirm('Hapus data?')">
                         <i class="fas fa-trash"></i>
                     </a>

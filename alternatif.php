@@ -16,6 +16,9 @@
             </div>
         </form>
     </div>
+
+
+    
     <table class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
@@ -35,11 +38,11 @@
                 <td><?= $row->nama_alternatif ?></td>
                 <td>
                     <a class="btn btn-info btn-circle btn-sm" 
-                        href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
+                        href="?m=alternatif_ubah&ID=<?= $row->id_alternatif ?>">
                         <i class="fas fa-info-circle"></i>
                     </a>
                     <a class="btn btn-danger btn-circle btn-sm" 
-                        href="aksi.php?act=kriteria_hapus&ID=<?= $row->id_kriteria ?>" 
+                        href="aksi.php?act=alternatif_hapus&ID=<?= $row->id_alternatif ?>" 
                         onclick="return confirm('Hapus data?')">
                         <i class="fas fa-trash"></i>
                     </a>

@@ -2,6 +2,8 @@
     <h1>Nilai Skala Pembobotan dan Penilaian</h1>
 </div>
 <div class="panel panel-default">
+
+    <!-- panel pencarian dan refresh -->
     <div class="panel-heading">
         <form class="form-inline">
             <input type="hidden" name="m" value="crips" />
@@ -16,11 +18,15 @@
             </div>
         </form>
     </div>
+    <!-- end -->
+
+    <!-- panel data pembobotan -->
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
                     <th>No</th>
+                    <th>Id Kriteria</th>
                     <th>Nama Kriteria</th>
                     <th>Nama</th>
                     <th>Nilai</th>
@@ -37,16 +43,17 @@
             foreach ($rows as $row) : ?>
                 <tr>
                     <td><?= $no++ ?></td>
+                    <td><?= $row->id_kriteria ?></td>
                     <td><?= $row->nama_kriteria ?></td>
                     <td><?= $row->nama_crips ?></td>
                     <td><?= $row->nilai ?></td>
                     <td>
                     <a class="btn btn-info btn-circle btn-sm" 
-                        href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
+                        href="?m=crips_ubah&ID=<?= $row->id_crips ?>">
                         <i class="fas fa-info-circle"></i>
                     </a>
                     <a class="btn btn-danger btn-circle btn-sm" 
-                        href="aksi.php?act=kriteria_hapus&ID=<?= $row->id_kriteria ?>" 
+                        href="aksi.php?act=crips_hapus&ID=<?= $row->id_crips ?>" 
                         onclick="return confirm('Hapus data?')">
                         <i class="fas fa-trash"></i>
                     </a>
@@ -55,4 +62,7 @@
             <?php endforeach ?>
         </table>
     </div>
+    <!-- end -->
+
+
 </div>

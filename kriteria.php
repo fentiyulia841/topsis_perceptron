@@ -14,6 +14,7 @@
                 <input class="form-control" type="text" placeholder="Pencarian. . ." name="q" value="<?= $_GET['q'] ?>" />
             </div>
 
+            <!-- button refresh -->
             <div class="form-group">
                 <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
             </div>
@@ -54,6 +55,8 @@
                 <td><?= $row->nama_kriteria ?></td>
                 <td><?= $row->nilai_kriteria ?></td>
                 <!-- <td><?= $row->bb ?>-<?= $row->ba ?></td> -->
+
+                <!-- aksi updata dan delete -->
                 <td>
                     <a class="btn btn-info btn-circle btn-sm" 
                         href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
@@ -65,9 +68,13 @@
                         <i class="fas fa-trash"></i>
                     </a>
                 </td>
+
+
             </tr>
         <?php endforeach; ?>
     </table>
+
+
     <!-- <div class="panel-footer">
         <?php
         foreach ($VARIABEL as $key => $val) {
@@ -80,4 +87,5 @@
             <br><?= $val->bb . " &leq; " . $val->kode_kriteria . " &leq; " . $val->ba ?>
         <?php endforeach ?>
     </div> -->
+
 </div>

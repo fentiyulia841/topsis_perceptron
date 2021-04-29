@@ -2,6 +2,8 @@
     <h1>Sektor</h1>
 </div>
 <div class="panel panel-default">
+
+
     <div class="panel-heading">
         <form class="form-inline">
             <input type="hidden" name="m" value="sektor" />
@@ -16,6 +18,8 @@
             </div>
         </form>
     </div>
+
+
     <table class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
@@ -35,11 +39,11 @@
                 <td><?= $row->nama_sektor ?></td>
                 <td>
                     <a class="btn btn-info btn-circle btn-sm" 
-                        href="?m=kriteria_ubah&ID=<?= $row->id_kriteria ?>">
+                        href="?m=sektor_ubah&ID=<?= $row->id_sektor ?>">
                         <i class="fas fa-info-circle"></i>
                     </a>
                     <a class="btn btn-danger btn-circle btn-sm" 
-                        href="aksi.php?act=kriteria_hapus&ID=<?= $row->id_kriteria ?>" 
+                        href="aksi.php?act=sektor_hapus&ID=<?= $row->id_sektor ?>" 
                         onclick="return confirm('Hapus data?')">
                         <i class="fas fa-trash"></i>
                     </a>
@@ -47,4 +51,6 @@
             </tr>
         <?php endforeach; ?>
     </table>
+
+
 </div>
