@@ -49,7 +49,10 @@
                     <td><?= $ALTERNATIF[$row->id_alternatif] ?></td>
                     <td class="nw">
                         <!-- <a class="btn btn-xs btn-warning" href="?m=bencana_detail&ID=<?= $row->id_bencana ?>"><span class="glyphicon glyphicon-search"></span></a> -->
-                        <a class="btn btn-xs btn-danger" href="aksi.php?act=bencana_hapus&ID=<?= $row->id_bencana ?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a class="btn btn-danger btn-circle btn-sm" 
+                        href="aksi.php?act=bencana_hapus&ID=<?= $row->id_bencana ?>" 
+                        onclick="return confirm('Hapus data?')">
+                        <i class="fas fa-trash"></i>
                     </td>
                 </tr>
             <?php endforeach ?>

@@ -81,6 +81,7 @@ function update_option($option_name, $option_value)
     global $db;
     return $db->query("UPDATE tb_options SET option_value='$option_value' WHERE option_name='$option_name'");
 }
+
 function get_rel_nilai($relasi)
 {
     global $CRIPS;
@@ -159,7 +160,7 @@ function get_crips_option($id_kriteria, $selected = 0)
             else
                 $a .= "<option value='$val->id_crips'>$val->nama_crips ($val->nilai)</option>";
         }
-    }
+    } 
     return $a;
 }
 

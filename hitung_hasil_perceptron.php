@@ -45,35 +45,35 @@ print_msg("Ditemukan $total_pola pola sebagai berikut", 'info');
 
 
 <!-- AG -->
-<h2>Proses AG</h2>
+<!-- <h2>Proses AG</h2> -->
 
 
-<?php
+<!-- <?php -->
 
 // echo '<hr />';
 
-$row = $db->get_row("SELECT MIN(nilai) AS bb, MAX(nilai) AS ba FROM tb_crips");
-$jumlah_kromosom = 5;
-$max_generation = 10;
-$kromosom = array();
-for ($a = 1; $a <= $jumlah_kromosom; $a++) {
-    foreach ($KRITERIA as $key => $val) {
-        $kromosom[$a][$key] = rand($row->bb, $row->ba);
-    }
-}
+// $row = $db->get_row("SELECT MIN(nilai) AS bb, MAX(nilai) AS ba FROM tb_crips");
+// $jumlah_kromosom = 5;
+// $max_generation = 10;
+// $kromosom = array();
+// for ($a = 1; $a <= $jumlah_kromosom; $a++) {
+//     foreach ($KRITERIA as $key => $val) {
+//         $kromosom[$a][$key] = rand($row->bb, $row->ba);
+//     }
+// }
 
 // echo '<pre>' . print_r($kromosom, 1) . '</pre>';
 
-$atribut = array();
-$range = array();
-foreach ($KRITERIA as $key => $val) {
-    $atribut[$key] = 'benefit';
-    $range[$key] = array($val->bb, $val->ba);
-}
-$ag = new Perceptron($kromosom, $data, $atribut, $range);
-$ag->max_generation = $max_generation;
-$ag->debug = 0;
-$ag->generate();
+// $atribut = array();
+// $range = array();
+// foreach ($KRITERIA as $key => $val) {
+//     $atribut[$key] = 'benefit';
+//     $range[$key] = array($val->bb, $val->ba);
+// }
+// $ag = new Perceptron($kromosom, $data, $atribut, $range);
+// $ag->max_generation = $max_generation;
+// $ag->debug = 0;
+// $ag->generate();
 // AG END
 
 
@@ -81,14 +81,13 @@ $ag->generate();
 
 
 // ambil nilai bobot kromosom terbaru
-$bobot = $ag->best_cromossom;
+// $bobot = $ag->best_cromossom;
 // hitung bobot menggunakan topsis
 $topsis = new TOPSIS($data, $atribut, $bobot);
+// ?>
 
 
 
-
-?>
 <h2>Perhitungan TOPSIS dengan Bobot Baru</h2>
 <div class="panel panel-primary">
     <div class="panel-heading">

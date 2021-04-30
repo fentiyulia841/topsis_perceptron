@@ -55,7 +55,7 @@
                 <td><?= $row->nama_kriteria ?></td>
                 <td><?= $row->nilai_kriteria ?></td>
                 <!-- <td><?= $row->bb ?>-<?= $row->ba ?></td> -->
-
+ 
                 <!-- aksi updata dan delete -->
                 <td>
                     <a class="btn btn-info btn-circle btn-sm" 
