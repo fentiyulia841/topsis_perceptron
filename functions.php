@@ -43,6 +43,7 @@ $ATRIBUT = array();
 $BOBOT = array();
 foreach ($rows as $row) {
     $KRITERIA[$row->id_kriteria] = $row;
+    // baris pertama benefit
     $ATRIBUT[$row->id_kriteria] = 'benefit';
     $BOBOT[$row->id_kriteria] = $row->nilai_kriteria;
 }

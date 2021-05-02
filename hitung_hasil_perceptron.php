@@ -10,8 +10,6 @@ foreach ($pola_details as $key => $val) {
         }
     }
 }
-
-
 print_msg("Ditemukan $total_pola pola sebagai berikut", 'info');
 ?>
 <?php foreach ($pola_details as $key_pola => $val_pola) : ?>
@@ -42,51 +40,81 @@ print_msg("Ditemukan $total_pola pola sebagai berikut", 'info');
     </div>
 <?php endforeach ?>
 
-
-
-<!-- AG -->
-<!-- <h2>Proses AG</h2> -->
-
-
-<!-- <?php -->
+<h2>Proses Perceptron</h2>
+<?php
 
 // echo '<hr />';
+// mengambil nilai min max pada table crips bobot
 
-// $row = $db->get_row("SELECT MIN(nilai) AS bb, MAX(nilai) AS ba FROM tb_crips");
-// $jumlah_kromosom = 5;
-// $max_generation = 10;
-// $kromosom = array();
-// for ($a = 1; $a <= $jumlah_kromosom; $a++) {
-//     foreach ($KRITERIA as $key => $val) {
-//         $kromosom[$a][$key] = rand($row->bb, $row->ba);
-//     }
+$row = $db->get_row("SELECT nilai FROM tb_crips ORDER BY RAND() LIMIT 5");
+
+$normalisasi = [];
+
+foreach ($row as $key => $value) {
+    $normalisasi[] = $value['nilai'];
+}
+
+$targetAngka  = 1;
+
+include ('perceptron/process/proses_perceptron.php');
+$epoh = 1;
+$perceptron = new Perceptron();
+// while (true) {
+		// echo "<h4>EPOH ke-$epoh</h4>";
+        $y_in = $perceptron->hitung_yin($normalisasi[0],$normalisasi[1],$normalisasi[2],$normalisasi[3],$normalisasi[4]);
+        $hasilAktivasi = $perceptron->set_aktivasi($y_in);
+        $perceptron->cek_target($targetAngka,$hasilAktivasi,$normalisasi[0],$normalisasi[1],$normalisasi[2],$normalisasi[3],$normalisasi[4]);
+        $error= $perceptron->cek_error($hasilAktivasi);
+
+        echo "<table class='table table-striped table-hover'>
+                <thead>
+                
+                <th>y_in</th>
+                <th>Aktivasi</th>
+                <th>Target</th>
+                <th>Error</th>
+                <th>Bobot dan Bias</th>
+                </thead>
+                <tbody>
+                <tr>
+                
+                <td>".round($y_in,2)."</td>
+                <td>$hasilAktivasi</td>
+                <td>".$targetAngka."</td>
+                <td>$error</td>
+                <td>W1 = ".$perceptron->get_bobot1().", W2 = ".$perceptron->get_bobot2().", W3 = ".$perceptron->get_bobot3().", W4 = ".$perceptron->get_bobot4().", W5 = ".$perceptron->get_bobot5().", B = ".$perceptron->get_bobot1()."</td>
+                </tr>
+                </tbody>
+            </table>";
+//             if($perceptron->get_batas() == 1){
+//                 break;
+//             }
+            
+//             else {
+//                 $perceptron->set_batas();
+//                 $epoh++;
+//             }
 // }
 
-// echo '<pre>' . print_r($kromosom, 1) . '</pre>';
+// $perceptron->get_bobot1();
+// $perceptron->get_bobot2();
+// $perceptron->get_bobot3();
+// $perceptron->get_bobot4();
+// $perceptron->get_bobot6();
+  
 
-// $atribut = array();
-// $range = array();
-// foreach ($KRITERIA as $key => $val) {
-//     $atribut[$key] = 'benefit';
-//     $range[$key] = array($val->bb, $val->ba);
-// }
-// $ag = new Perceptron($kromosom, $data, $atribut, $range);
-// $ag->max_generation = $max_generation;
-// $ag->debug = 0;
-// $ag->generate();
-// AG END
-
-
+$bobot = [];
+$bobot[] = $perceptron->get_bobot1();
+$bobot[] = $perceptron->get_bobot2();
+$bobot[] = $perceptron->get_bobot3();
+$bobot[] = $perceptron->get_bobot4();
+$bobot[] = $perceptron->get_bobot5();
 
 
-
-// ambil nilai bobot kromosom terbaru
-// $bobot = $ag->best_cromossom;
-// hitung bobot menggunakan topsis
 $topsis = new TOPSIS($data, $atribut, $bobot);
-// ?>
+?>
 
-
+ 
 
 <h2>Perhitungan TOPSIS dengan Bobot Baru</h2>
 <div class="panel panel-primary">

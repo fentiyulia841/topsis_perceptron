@@ -7,16 +7,26 @@
 		private $bias;
 		private $tmp = array();
 		private $batas;
+		private $error;
+		private $target_angka;
+		private $angka2;
+		private $normalisasi;
 
 		function __construct(){
-			$this->bobot[0] = 0;
-			$this->bobot[1] = 0;
-			$this->bobot[2] = 0;
-			$this->bobot[3] = 0;
-			$this->bobot[4] = 0;
+			$this->bobot[0] = 1;
+			$this->bobot[1] = 2;
+			$this->bobot[2] = 4;
+			$this->bobot[3] = 1;
+			$this->bobot[4] = 2;
 			$this->bias = 0;
 			$this->treshold = 0.5;
-			$this->learning_rate = 0.4;	
+			$this->learning_rate = 0.4;
+			$this->error = 0;
+			$this->angka2 = -2;
+			$this->target_angka = 1;	
+
+
+
 			$this->tmp[0] = $this->bobot[0];
 			$this->tmp[1] = $this->bobot[1];
 			$this->tmp[2] = $this->bobot[2];
@@ -57,11 +67,32 @@
 			if ($y_in > $this->treshold) {
 				return 1;
 			}elseif ($y_in<= $this->treshold && $y_in >=(-$this->treshold)) {
-				return 0;
+				return 2;
 			}elseif ($y_in < (-$this->treshold)) {
 				return -1;
 			}
 		}
+
+		// cek error
+		function cek_error($set_aktivasi){
+			// $eror_cek =  
+			return $error = $this->error-$set_aktivasi^2;
+		}
+
+
+		// hitung error/bobot untuk hitung bobot baru
+		function func_error_bobot1($aktivasi, $input1){
+			// $angka2 = -2;
+			// $target_angka = 1;
+			$error_bobot = $this->angka2 * ($this->target_angka - $this->$aktivasi) * $this->$aktivasi * ($this->target_angka - $this->$aktivasi) * $this->$input1;
+			return $error_bobot;
+		}
+
+		function bobot_new($set_aktivasi){
+			// $eror_cek =  
+			return $error = $this->error-$set_aktivasi^2;
+		}
+		
 		function get_bobot1(){
 			return round($this->tmp[0],2);
 		}

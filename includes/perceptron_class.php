@@ -1,5 +1,5 @@
 <?php 
-	class Perceptron{
+	class Perceptron1{
 
 		private $learning_rate;
 		private $treshold;
@@ -9,14 +9,16 @@
 		private $batas;
 
 		function __construct(){
-			$this->bobot[0] = 0;
-			$this->bobot[1] = 0;
-			$this->bobot[2] = 0;
-			$this->bobot[3] = 0;
-			$this->bobot[4] = 0;
-			$this->bias = 0;
+			$this->bobot[0] = 1;
+			$this->bobot[1] = 2;
+			$this->bobot[2] = 4;
+			$this->bobot[3] = 5;
+			$this->bobot[4] = 3;
+			$this->bias = 1;
 			$this->treshold = 0.5;
 			$this->learning_rate = 0.4;	
+			$this->error = 0;
+			$this->pangkat = 2;
 			$this->tmp[0] = $this->bobot[0];
 			$this->tmp[1] = $this->bobot[1];
 			$this->tmp[2] = $this->bobot[2];
@@ -47,6 +49,12 @@
 		function hitung_yin($x1,$x2,$x3,$x4,$x5){
 			return $hasil = $this->bias+($x1*$this->bobot[0])+($x2*$this->bobot[1])+($x3*$this->bobot[2])+($x4*$this->bobot[3])+($x5*$this->bobot[4]);
 		}
+
+		function cek_error($set_aktivasi){
+			// $eror_cek =  
+			return $error = $this->error-$set_aktivasi^2;
+		}
+
 		function set_batas(){
 			$this->batas = 0;
 		}
