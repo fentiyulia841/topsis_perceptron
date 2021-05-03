@@ -1,7 +1,7 @@
 <?php
 class DB
 {
-    var $conn = null;
+    var $conn = null; 
     public $insert_id = 0;
 
     public function __construct($host, $username, $passwd, $dbname)

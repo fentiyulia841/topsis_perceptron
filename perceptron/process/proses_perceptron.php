@@ -10,7 +10,11 @@
 		private $error;
 		private $target_angka;
 		private $angka2;
-		private $normalisasi;
+		private $input1;
+		private $input2;
+		private $input3;
+		private $input4;
+		private $input5;
 
 		function __construct(){
 			$this->bobot[0] = 1;
@@ -24,6 +28,11 @@
 			$this->error = 0;
 			$this->angka2 = -2;
 			$this->target_angka = 1;	
+			$this->input1 = 3;
+			$this->input2 = 2;
+			$this->input3 = 1;
+			$this->input4 = 3;
+			$this->input5 = 2;
 
 
 
@@ -65,26 +74,27 @@
 		}
 		function set_aktivasi($y_in){
 			if ($y_in > $this->treshold) {
-				return 1;
+				return 3;
 			}elseif ($y_in<= $this->treshold && $y_in >=(-$this->treshold)) {
 				return 2;
 			}elseif ($y_in < (-$this->treshold)) {
-				return -1;
+				return 2;
 			}
 		}
 
 		// cek error
 		function cek_error($set_aktivasi){
 			// $eror_cek =  
-			return $error = $this->error-$set_aktivasi^2;
+			$error = ($this->error - $set_aktivasi) * ($this->error - $set_aktivasi);
+			return $error;
 		}
 
 
 		// hitung error/bobot untuk hitung bobot baru
-		function func_error_bobot1($aktivasi, $input1){
+		function func_error_bobot1($aktivasi){
 			// $angka2 = -2;
 			// $target_angka = 1;
-			$error_bobot = $this->angka2 * ($this->target_angka - $this->$aktivasi) * $this->$aktivasi * ($this->target_angka - $this->$aktivasi) * $this->$input1;
+			$error_bobot = $this->angka2 * (($this->target_angka - $aktivasi) * $aktivasi * ($this->target_angka - $aktivasi) * $this->input1);
 			return $error_bobot;
 		}
 
