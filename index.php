@@ -23,13 +23,7 @@ include 'functions.php';
 
     <!-- Custom styles for this template-->
     <link href="assets/css/sb-admin-2.min.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYoYWDkkxVBzR-qMaf8zhgZhyBYXGN6bU&language=id&region=ID&libraries=drawing,places,geometry"></script>
-	<script>
-		var default_lat = <?= get_option('default_lat') * 1 ?>;
-		var default_lng = <?= get_option('default_lng') * 1 ?>;
-		var default_zoom = <?= get_option('default_zoom') ?>;
-	</script>
-
+    
 </head>
 
 <body id="page-top">

@@ -78,7 +78,16 @@ $perceptron = new Perceptron();
         $hasilAktivasi = $perceptron->set_aktivasi($y_in);
         $perceptron->cek_target($targetAngka,$hasilAktivasi,$input[0],$input[1],$input[2],$input[3],$input[4]);
         $error= $perceptron->cek_error($hasilAktivasi);
-        $error_bobot = $perceptron->func_error_bobot1($hasilAktivasi);
+        $error_bobot = $perceptron->func_error_bobot1($hasilAktivasi,$input[0]);
+        $error_bobot2 = $perceptron->func_error_bobot2($hasilAktivasi,$input[1]);
+        $error_bobot3 = $perceptron->func_error_bobot3($hasilAktivasi,$input[2]);
+        $error_bobot4 = $perceptron->func_error_bobot4($hasilAktivasi,$input[3]);
+        $error_bobot5 = $perceptron->func_error_bobot5($hasilAktivasi,$input[4]);
+        $bobot_baru = $perceptron->bobot_new1($error_bobot);
+        $bobot_baru2 = $perceptron->bobot_new2($error_bobot2);
+        $bobot_baru3 = $perceptron->bobot_new3($error_bobot3);
+        $bobot_baru4 = $perceptron->bobot_new4($error_bobot4);
+        $bobot_baru5 = $perceptron->bobot_new5($error_bobot5);
 
         echo "<table class='table table-striped table-hover'>
                 <thead>
@@ -87,8 +96,8 @@ $perceptron = new Perceptron();
                 <th>Aktivasi</th>
                 <th>Target</th>
                 <th>Error</th>
-                <th>Error Bobot</th>
-                <th>Bobot Baru</th>
+                
+                
                 </thead>
                 <tbody>
                 <tr>
@@ -97,11 +106,61 @@ $perceptron = new Perceptron();
                 <td>$hasilAktivasi</td>
                 <td>".$targetAngka."</td>
                 <td>$error</td>
-                <td>$error_bobot</td>
-                <td>W1 = ".$perceptron->get_bobot1().", W2 = ".$perceptron->get_bobot2().", W3 = ".$perceptron->get_bobot3().", W4 = ".$perceptron->get_bobot4().", W5 = ".$perceptron->get_bobot5().", B = ".$perceptron->get_bobot1()."</td>
+
+                
                 </tr>
                 </tbody>
             </table>";
+
+        echo "<table class='table table-striped table-hover'>
+            <thead>
+            
+            <th>Error Bobot 1</th>
+            <th>Error Bobot 2</th>
+            <th>Error Bobot 3</th>
+            <th>Error Bobot 4</th>
+            <th>Error Bobot 5</th>
+       
+            </thead>
+            <tbody>
+            <tr>
+            
+            <td>$error_bobot</td>
+            <td>$error_bobot2</td>
+            <td>$error_bobot3</td>
+            <td>$error_bobot4</td>
+            <td>$error_bobot5</td>
+            
+            </tr>
+            </tbody>
+        </table>";
+
+
+        echo "<table class='table table-striped table-hover'>
+            <thead>
+            
+            <th>Bobot Baru 1</th>
+            <th>Bobot Baru 2</th>
+            <th>Bobot Baru 3</th>
+            <th>Bobot Baru 4</th>
+            <th>Bobot Baru 5</th>
+            
+            </thead>
+            <tbody>
+            <tr>
+            
+            <td>$bobot_baru</td>
+            <td>$bobot_baru2</td>
+            <td>$bobot_baru3</td>
+            <td>$bobot_baru4</td>
+            <td>$bobot_baru5</td>
+            
+            </tr>
+            </tbody>
+        </table>";
+
+
+
 //             if($perceptron->get_batas() == 1){
 //                 break;
 //             }
@@ -119,13 +178,20 @@ $perceptron = new Perceptron();
 // $perceptron->get_bobot6();
   
 
-$bobot = [];
-$bobot[] = $perceptron->get_bobot1();
-$bobot[] = $perceptron->get_bobot2();
-$bobot[] = $perceptron->get_bobot3();
-$bobot[] = $perceptron->get_bobot4();
-$bobot[] = $perceptron->get_bobot5();
+// $bobot = [];
+// $bobot[] = $perceptron->get_bobot1();
+// $bobot[] = $perceptron->get_bobot2();
+// $bobot[] = $perceptron->get_bobot3();
+// $bobot[] = $perceptron->get_bobot4();
+// $bobot[] = $perceptron->get_bobot5();
 
+
+$bobot = [];
+$bobot[] = $perceptron->bobot_new1($error_bobot);
+$bobot[] = $perceptron->bobot_new2($error_bobot2);
+$bobot[] = $perceptron->bobot_new3($error_bobot3);
+$bobot[] = $perceptron->bobot_new4($error_bobot4);
+$bobot[] = $perceptron->bobot_new5($error_bobot5);
 
 $topsis = new TOPSIS($data, $atribut, $bobot);
 ?>
