@@ -39,7 +39,7 @@ include 'functions.php';
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">DSS SEKTOR</div>
+                <div class="sidebar-brand-text mx-3">Query</div>
             </a>
 
             <!-- Divider -->
@@ -47,90 +47,17 @@ include 'functions.php';
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item">
-                <a class="nav-link" href="?m=kriteria">
+                <a class="nav-link" href="?m=pembagi">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Kriteria</span></a>
+                    <span>Pembagi</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            
-
-            <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
-                <a class="nav-link" href="?m=crips">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pembobotan</span>
-                </a>
-            </li>
-           
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            
-
-            <!-- Nav Item - Charts -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=sektor">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Sektor</span></a>
-            </li>
-
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Tables -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=alternatif">
-                    <i class="fas fa-fw fa-table"></i>
-                    <span>Alternatif</span></a>
-            </li>
-
-            <hr class="sidebar-divider">
-
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=jenis">
+                <a class="nav-link" href="?m=normalisasi">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Jenis Bencana</span></a>
+                    <span>Normalisasi</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=pola">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Pola</span>
-                </a>
-            </li>
-           
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=hitung">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Surveyor</span></a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
-                <a class="nav-link" href="?m=bencana">
-                    <i class="fas fa-fw fa-cog"></i>
-                    <span>Bencana</span>
-                </a>
-            </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

@@ -2,4 +2,4 @@
 $config["server"] = 'localhost';
 $config["username"] = 'root';
 $config["password"] = '';
-$config["database_name"] = 'nn_topsis';
+$config["database_name"] = 'modifiedtopsis';

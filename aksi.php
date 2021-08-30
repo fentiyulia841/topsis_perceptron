@@ -1,7 +1,7 @@
 <?php
 require_once 'functions.php';
 
-/** kriteria **/
+/** kriteria **/ 
 if ($mod == 'kriteria_tambah') {
     $kode_kriteria = $_POST['kode_kriteria'];
     $nama_kriteria = $_POST['nama_kriteria'];
